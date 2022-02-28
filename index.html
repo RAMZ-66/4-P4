@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4</title>
+</head>
+<body>
+
+    <h1 id="bestCalif" style="color: blue;"></h1>
+    <h1 id="regularCalif"></h1>
+    <h1 id="worstCalif" style="color: red;"></h1>
+
+    <script>
+        
+        restQuantity = prompt("Bienvenido, introduce la cantidad de restaurantes por calificar:");
+       
+        i = 0;
+
+        var califArray = [];
+
+        while(i < restQuantity ){
+            var restCalif = prompt("Introduce la calificación del restaurant:");
+            califArray.push(restCalif);
+            i++
+        }
+
+        califArray.sort(function (a, b) { return b - a; });
+
+        var lastElement =  califArray.length -1;
+
+        document.getElementById("bestCalif").innerHTML = califArray[0];
+        document.getElementById("regularCalif").innerHTML = califArray;
+        document.getElementById("worstCalif").innerHTML = califArray[lastElement];
+        
+    </script>
+</body>
+</html>
